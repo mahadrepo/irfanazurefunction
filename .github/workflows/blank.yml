@@ -4,10 +4,10 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main # Change to your default branch if needed
+      - main 
   pull_request:
     branches:
-      - main # Change to your default branch if needed
+      - main 
 
 jobs:
   build:
@@ -21,6 +21,12 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "8.0.x"
+
+      - name: Debug - Print current directory
+        run: pwd
+    
+      - name: Debug - List directory contents
+        run: ls -R
 
       - name: Restore dependencies
         run: dotnet restore ./AddNumbersApp/AddNumbersApp.csproj
