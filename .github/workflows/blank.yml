@@ -23,13 +23,13 @@ jobs:
           dotnet-version: "8.0.x"
 
       - name: Restore dependencies
-        run: dotnet restore ./AddNumbersApp/AddNumbersApp.csproj
+        run: dotnet restore ../AddNumbersApp/AddNumbersApp.csproj
 
       - name: Build the project
-        run: dotnet build --configuration Release ./AddNumbersApp/AddNumbersApp.csproj
+        run: dotnet build --configuration Release ../AddNumbersApp/AddNumbersApp.csproj
 
       - name: Run tests
-        run: dotnet test ./AddNumbersApp.Tests/AddNumbersApp.Tests.csproj --configuration Release
+        run: dotnet test ../AddNumbersApp.Tests/AddNumbersApp.Tests.csproj --configuration Release
 
       - name: Deploy
         run: |
